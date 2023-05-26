@@ -1,0 +1,83 @@
+body {
+    background: url("./images/background.png") 0px 0px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: stepAnimation 10s linear infinite;
+
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.sun {
+    position: absolute;
+    top: 0;
+    right: 50px;
+    animation: sunAnimation 3s infinite;
+}
+
+.sun img {
+    max-width: 150px;
+}
+
+.cloud {
+    margin: auto;
+
+    animation: cloudAnimation 2s infinite;
+}
+
+.cloud img {
+    max-width: 250px;
+}
+
+.sheet {
+    height: 123px;
+    width: 70px;
+    background: url("./images/sprite_sheet.png") 0px 0px;
+    animation: sheetAnimation 0.8s steps(16) infinite, sheetWalkAnimation 35s infinite;
+
+    position: absolute;
+    bottom: 100px;
+    left: 0;
+}
+
+@keyframes sheetAnimation {
+    100% {
+        background-position: -1135px;
+    }
+}
+
+@keyframes sheetWalkAnimation {
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes stepAnimation {
+    100% {
+        background-position-x: 100%;
+    }
+}
+
+@keyframes sunAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes cloudAnimation {
+    50% {
+        transform: translateY(25px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
